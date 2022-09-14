@@ -1,25 +1,18 @@
+            
 version: 2.1
 
 jobs:
-# comment
-  build:
-    docker:
-      - image: circleci/python:3.7
-    working_directory: ~/repo
-    steps:
-      - checkout
-       - run:
-          name: install dependencies
-          command: |
-            python3 -m venv venv
-            . venv/bin/activate
-            make install
-            
-      - run:
-          name: run test/lint
-          command: |
-            . venv/bin/activate
-            make lint
+  build: 
+      docker:
+        - image: circleci/python:3.7
+      steps:
+        - checkout
+        - run:
+            name: install dependencies
+            command: |
+              python3 -m venv venv
+              . venv/bin/activate
+              make install
 
 workflows:
   say-hello-workflow:
