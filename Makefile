@@ -1,18 +1,17 @@
-setup:
-	python3 -m venv ~/.udacity-devops
+setup:	
+	python3 -m venv ~/.env
 
-install:
+install:	
 	pip install --upgrade pip &&\
-		pip install -r requirements.txt
+    	pip install -r requirements.txt
 
-test:
-	#python -m pytest -vv --cov=myrepolib tests/*.py
+test:	
+	#python -m pytest -vv --cov=myrepolib tests/*.py	
 	#python -m pytest --nbval notebook.ipynb
 
 
-lint:
-	# hadolint demos/flask-sklearn/Dockerfile
-	# pylint --disable=R,C,W1203 demos/*
-	pylint --disable=R,C hello.py
+lint:	
+	hadolint Dockerfile	
+	pylint --disable=R,C,W1203 hello.py
 
 all: install lint test

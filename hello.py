@@ -1,8 +1,9 @@
-print("start greeting")
-def myFunc():
-    print("hello")
-    # return 1
-    
-myFunc()
+import click
 
-var name
+@click.command()
+def myFunc():
+    click.echo("hello world! I am back !!")
+    
+    
+if __name__ == '__main__':
+    myFunc()
