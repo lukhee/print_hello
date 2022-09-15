@@ -4,7 +4,7 @@ WORKDIR /app
 
 COPY . hello.py /app/
 
-RUN  pip install --upgrade pip &&\
+RUN  pip install pip==22.2.2 &&\
     	pip install -r requirements.txt
 
 CMD ["pyhton", "hello.py"]
